@@ -13,3 +13,168 @@
  *= require_tree .
  *= require_self
  */
+
+
+ ul {
+  list-style: none;
+
+ }
+
+ .cardgrid {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ .flatcard {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 30%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column; /* This is necessary to make the sections stack vertically */
+  padding-bottom: 10px;
+}
+
+
+.section1, .section2, .section3 {
+  width: 100%; /* This ensures that each section takes the full width of the card */
+}
+
+.section1 img{
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+.section2 {
+  background:#F8F9FA;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Set the height of the container */
+}
+
+.section2 > * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.section1, .section2 {
+  height: 45%; /* Section 1 and 2 will take 40% of the card's height */
+}
+
+.section3 {
+  height: 10%; /* Section 3 will take the remaining 20% of the card's height */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.section3 > * {
+  margin-top: 15px;
+  background-color: white;
+  text-align: center;
+  width: 25%;
+}
+
+
+.navbar-lewagon {
+  justify-content: space-between;
+  text-decoration: none;
+  background: #F8F9FA;
+  border-bottom: 1px solid lightgrey;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.avatar{
+  border-radius: 50%;
+  width: 75px;
+}
+
+.navbar-nav{
+ align-items: center;
+}
+
+.nav{
+margin-right: 10px;
+}
+
+.add-flat{
+  text-decoration: none;
+  color: inherit;
+}
+
+.deleteflat{
+  color: red;
+  box-shadow: 2px 2px 4px rgba(139, 0, 0, 0.7);
+  border: 1px solid red;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.editflat{
+  color: orange;
+  box-shadow: 2px 2px 4px rgba(255, 166, 0, 0.702);
+  border: 1px solid orange;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.seeflat{
+  box-shadow: 2px 2px 4px rgba(0, 0, 255, 0.698);
+  border: 1px solid blue;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.numbers{
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.numbers p {
+ margin-right: 15px;
+}
+
+.add-btn{
+  background-color: white;
+  box-shadow: 2px 2px 4px rgba(9, 28, 233, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+  border: none;
+  color: blue;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.add-btn :hover{
+  font-weight: 600;
+}
+
+.nav-item :hover{
+  background-color: rgba(0, 0, 255, 0.439) ;
+  color: white;
+  font-weight: 700;
+}

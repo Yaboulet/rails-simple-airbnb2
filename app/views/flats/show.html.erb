@@ -1,0 +1,11 @@
+Welcome to <h1><%= @flat.name %>'s </h1> page.
+
+<p>It's ID is <h1><%= @flat.id %> </h1></p>
+
+ <p><%= @flat.description %></p>
+
+
+<%= link_to "Edit this flat", edit_flat_path(flat) %>
+<%= link_to "Return to index", flats_path %>
+
+<%= link_to "Delete this flat", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

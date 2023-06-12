@@ -14,6 +14,9 @@
  *= require_self
  */
 
+//  @import "bootstrap";
+//  @import "flatpickr/dist/flatpickr";
+//  @import "flatpickr/dist/themes/airbnb";
 
  ul {
   list-style: none;
@@ -177,4 +180,179 @@ margin-right: 10px;
   background-color: rgba(0, 0, 255, 0.439) ;
   color: white;
   font-weight: 700;
+}
+
+.flat-form{
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  background-color: #F8F9FA;
+  padding: 40px;
+  border-radius: 10px;
+  flex-direction: column;
+
+}
+
+.flat-form input[type="submit"] {
+  background-color: #0B5ED7;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.flat-form input[type="text"] {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.flat-form input[name="flat[description]"] {
+  height: 150px; /* Adjust the height as needed */
+  resize: vertical; /* Allow vertical resizing */
+  overflow-y: auto;
+  vertical-align: top; /* Align text to the top */
+  white-space: normal; /* Wrap text to form lines */
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-group{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label{
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.flatbanner img{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.flat_showcard{
+  background-color: lightgray;
+  height: 250px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.book-showcard{
+  background-color: lightgray;
+  height: 500px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-showcard .form-control {
+  background-color: none;
+  color: black; /* Sets text color */
+  font-weight: bold; /* Makes text bold */
+  }
+
+
+.info-showcard{
+  background-color: lightgray;
+  height: 250px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.moreinfo{
+  background-color: lightgray;
+  height: 500px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.col-8.show-left{
+
+
+}
+
+.neg-margin{
+  justify-content: center;
+  margin-top: -75px;
+  /* margin-left: 40px; */
+}
+
+//
+
+.booking-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.booking {
+  border: 1px solid black;
+  box-shadow: black;
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-status {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  width: 30%;
+  text-align: center;
+  align-self: flex-end;
+  font-weight: 700;
+}
+
+.booking-status p{
+  margin: 5px;
+  color: white;
+}
+
+.booking-status-Pending {
+  background-color: yellow;
+}
+
+.booking-status-Accepted {
+  background-color: green;
+}
+
+.booking-status-Refused {
+  background-color: red;
+}
+
+.manage-btns{
+  display: flex;
+  justify-content: space-around;
 }

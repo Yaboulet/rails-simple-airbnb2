@@ -9,6 +9,20 @@ gem "faker"
 
 gem 'unsplash', '~> 1.5'
 
+gem "geocoder"
+
+gem "webpacker"
+
+gem 'flatpickr'
+
+gem "sassc-rails"
+
+gem "bootstrap"
+
+gem "pundit"
+
+gem "devise"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 

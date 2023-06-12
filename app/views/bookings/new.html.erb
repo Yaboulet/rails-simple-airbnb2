@@ -1,0 +1,12 @@
+<% if @booking.errors.any? %>
+  <div class="alert alert-danger">
+    <h4>Please fix the following errors:</h4>
+    <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!-- Render the booking form here -->

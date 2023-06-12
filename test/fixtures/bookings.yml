@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  final_price: 1
+  status: 1
+  guests_on_booking: 1
+  start_date: 2023-05-31
+  end_date: 2023-05-31
+  user: one
+  flat: one
+
+two:
+  final_price: 1
+  status: 1
+  guests_on_booking: 1
+  start_date: 2023-05-31
+  end_date: 2023-05-31
+  user: two
+  flat: two

@@ -1,0 +1,55 @@
+<h1 style="center">Welcome to your Dashboard ! </h1>
+
+<h1>Manage your flats here</h1>
+
+<main class="cardgrid container">
+    <% @flats.each do |flat| %>
+      <div class="flatcard">
+        <div class="section1">
+            <img src="https://picsum.photos/seed/<%= flat.id %>/640" alt="">
+        </div>
+        <div class="section2">
+          <p><h3><%= flat.name  %></h3></p>
+          <p><h5><%= flat.address %></h5></p>
+          <p> Owner:<%= flat.user_id %>
+          <div class ="numbers">
+            <p><i class="fa-sharp fa-solid fa-euro-sign fa-lg"></i><strong><%= flat.price_per_night %></strong> par nuit</p>
+            <p><i class="fa-solid fa-people-line fa-lg"></i><strong><%= flat.number_of_guests %></strong> pers.</p>
+          </div>
+        </div>
+        <div class="section3">
+          <%# <div class="subsection1"> %>
+            <%= link_to "See", flat_path(flat), class: "seeflat" %>
+          <%# </div> %>
+          <%# <div class="subsection2"> %>
+          <%= link_to "Edit", edit_flat_path(flat), class: "editflat" %>
+          <%= link_to "Delete", flat_path(flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "deleteflat" %>
+          <%# </div> %>
+        </div>
+      </div>
+    <% end %>
+  </main>
+
+  <h1>Manage your flats bookings here (to do: creer un index booking avec un path_to)</h1>
+
+  <div class ="booking-list container">
+      <% @bookings.each do |booking| %>
+      <div class="booking">
+       <div class="booking-status booking-status-<%= booking.status_class %>">
+          <p><%= booking.status_class %></p>
+       </div>
+        <p><h3>You have a booking for <%= booking.flat.name  %></h3></p>
+        <p><h3>It's ID is <%= booking.id  %></h3></p>
+        <p><h3>It's booked by <%= booking.user.first_name %> <%= booking.user.last_name %></h3></p>
+        <div class ="manage-btns">
+          <% if booking.status == 0 %>
+            <%= link_to "Accept", booking_path(booking, new_status: "1"), data: {turbo_method: :patch}, class: "btn btn-success" %>
+            <%= link_to "Refuse", booking_path(booking, new_status: "2"), data: {turbo_method: :patch}, class: "btn btn-danger" %>
+          <% else booking.status == 1 || booking.status == 2 %>
+            <p style="font-weight: bold; background-color: lightgrey">You have already replied to this request</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>

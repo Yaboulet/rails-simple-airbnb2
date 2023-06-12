@@ -1,15 +1,37 @@
-<%= form_with model: @flat do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :price_per_night %>
-  <%= f.number_field :price_per_night %>
-  <%= f.label :number_of_guests %>
-  <%= f.number_field :number_of_guests %>
-  <%= f.submit %>
-<% end %>
+
+
+
+<div class="form container">
+  <div class="flat-form">
+    <h1>Add your flat !</h1>
+    <%= form_with model: @flat do |f| %>
+      <div class ="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div class ="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+      </div>
+      <div class ="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
+      <div class ="form-group">
+        <%= f.label :price_per_night %>
+        <div style="display: inline-block; position: relative;">
+          <%= f.text_field :price_per_night, title: "Please enter a number" %>
+          <span style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%);">€</span>
+        </div>
+      </div>
+
+      <div class ="form-group">
+        <%= f.label :number_of_guests %>
+        <%= f.number_field :number_of_guests %>
+      </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to "Return to index", flats_path %>

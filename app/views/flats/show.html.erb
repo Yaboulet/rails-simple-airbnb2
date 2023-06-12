@@ -1,11 +1,72 @@
-Welcome to <h1><%= @flat.name %>'s </h1> page.
+<div class="flatbanner">
+  <img src="<%= asset_path 'image_airbnb.jpg' %>" alt="">
+</div>
 
-<p>It's ID is <h1><%= @flat.id %> </h1></p>
+<div class="container neg-margin">
+  <div class="row">
+    <div class="col-8 show-left">
+      <div class="flat_showcard">
+        <h1><%= @flat.name %></h1>
+        <p><%= @flat.description %></p>
+      </div>
+      <div class="moreinfo">
+        <div style="width: 100%; height: 100%;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="pk.eyJ1IjoiZ2FyYmFyYyIsImEiOiJjbGlhNjloNDUwMGtlM2ZxcDc2dDhpMnEzIn0.lSkrH4_eMOOUx22nI10rqA">
+        </div>
+      </div>
+    </div>
+   <div class="col-4 show-right" data-controller="booking">
+  <div class="book-showcard">
+    <div class="flatpickr">
+      <%= form_with model: [@flat, @booking], url: flat_bookings_path(@flat) do |f| %>
 
- <p><%= @flat.description %></p>
+        <div class="col">
+          <%= f.label :start_date, class: "form-label text-secondary fw-bold" %>
+          <%= f.text_field :start_date, as: :date,
+                          class: "form-control",
+                          data: { target: "booking.start", controller: "flatpickr", flatpickr: "{dateFormat: 'Y-m-d'}", action: "flatpickr-change->booking#calculateDuration" } %>
+        </div>
+        <div class="col">
+          <%= f.label :end_date, class: "form-label text-secondary fw-bold" %>
+          <%= f.text_field :end_date, as: :date,
+                          class: "form-control",
+                          data: { target: "booking.end", controller: "flatpickr", flatpickr: "{dateFormat: 'Y-m-d'}", action: "flatpickr-change->booking#calculateDuration" } %>
+        </div>
+        <%# <div class="col">
+          <label class="form-label text-secondary fw-bold">Duration:</label>
+          <input type="text" class="form-control" data-target="booking.duration" readonly>
+        </div> %>
+        <div class="col">
+          <%= f.label :guests_on_booking, "Number of Guests", class: "form-label text-secondary fw-bold" %>
+          <%= f.number_field :guests_on_booking, in: 1..20, step: 1, class: "form-control" %>
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-success">Book now!</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
-<%= link_to "Edit this flat", edit_flat_path(flat) %>
-<%= link_to "Return to index", flats_path %>
 
-<%= link_to "Delete this flat", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <div class="info-showcard">
+        <h1>Details of the appartment </h1>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= link_to "Edit this flat", edit_flat_path(@flat) %>
+    <%= link_to "Return to index", flats_path %>
+    <%= link_to "Delete this flat", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+</div>
+
+<h1>It's ID is <%= @flat.id %> </h1>
+
+<div data-controller="hello">
+  <input data-hello-target="name" type="text">
+  <button data-action="click->hello#greet">Greet</button>
+</div>
